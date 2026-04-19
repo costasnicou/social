@@ -1,0 +1,61 @@
+{% extends "network/layout.html" %}
+
+{% block title %} Social Network - Following{% endblock %}
+     
+{% block body %}
+<main class="main">
+    <div class="main-wraper">
+        <h1>Following Posts</h1>
+        <div class="main-content">
+            <div class="all_posts">
+            
+                {% for profile_post in page_obj %}
+                    
+        
+                <div class="post">
+                    <p>{{profile_post.content}}</p>
+                    <p class="post-data">Posted by <a href="{% url 'profile' profile_post.user.username %}">{{profile_post.user.username}}</a> - {{profile_post.creation_date}}</p>
+                    <div class="likes">
+                        {% if user.is_authenticated %}
+                        
+                            <button id="unlike_btn-{{profile_post.id}}" onclick="unlike({{profile_post.id}},{{profile_post.likes.count}})" data-id="{{profile_post.id}}" 
+                            class="unlike_btn  {% if profile_post.liked == False %}  hidden {% elif profile_post.liked %}  {% else %} hidden {% endif %} " ><i class="fa-regular fa-thumbs-down"></i>
+                            </button> 
+                        
+                            <button id="like_btn-{{profile_post.id}}" onclick="addlike({{profile_post.id}},{{profile_post.likes.count}})" data-id="{{post.id}}" class="like_btn {% if profile_post.liked %}  hidden {% elif not profile_post.liked %} {% endif %}"><i class="fa-regular fa-thumbs-up"></i></button> 
+                        
+                        {% endif %} 
+                        <p><i class="fa-solid fa-heart"></i> <span id="like-{{profile_post.id}}" class="likecount">{% if profile_post.likes.count != 0 %}{{profile_post.likes.count}}{% else %}0{% endif %}</span></p>
+                    </div>
+                    
+                </div>
+
+                {% empty %}
+                    <p style="text-align: center;">You are not following any users</p>
+                    
+                {% endfor %}
+
+            </div>
+
+            <div class="pagination">
+                <span class="step-links">
+                    {% if page_obj.has_previous %}
+                        
+                        <a href="?page={{ page_obj.previous_page_number }}" class="pagination-step">Previous</a>
+                    {% endif %}
+
+                    
+                    {% if page_obj.has_next %}
+                        <a href="?page={{ page_obj.next_page_number }}" class="pagination-step">Next</a>
+                        
+                    {% endif %}
+                </span>
+            </div>
+        </div>
+    </div>
+</main>
+
+{% endblock %}
+
+
+

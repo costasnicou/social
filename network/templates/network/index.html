@@ -1,0 +1,91 @@
+{% extends "network/layout.html" %}
+{% block title %}Social Network - All Posts{% endblock %}
+     
+{% block body %}
+    <main class="main">
+        <div class="main-wraper">
+            <h1>Social Wall - All Posts</h1>
+            <div class="flexing">          
+
+              
+
+                <div class="main-content">
+                    {% if user.is_authenticated %}
+                   <form class="create-post-form" action="" method="POST">
+                        {% csrf_token %}
+                        <label for="content">{{postform.content.label}}</label>
+                        {{ postform.content }}
+                        <input class="btn-submit" name="add_new_post" type="submit" value="Post">
+                    </form>    
+                    {% endif %}
+                        
+                  
+                    <div class="all_posts">
+                        <h2>Posts</h2>
+                       
+                        {% for post in page_obj %}
+                        <div class="post" id="post-{{post.id}}">
+                            <p>{{post.content}}</p>
+                            <p class="post-data">Posted by <a href="{% url 'profile' post.user.username %}">{{post.user.username}}</a> - {{post.creation_date}}</p>
+                            <div class="likes">
+                                {% if user.is_authenticated %}
+                               
+                                    <button id="unlike_btn-{{post.id}}" onclick="unlike({{post.id}},{{post.likes.count}})" data-id="{{post.id}}" 
+                                    class="unlike_btn  {% if post.liked == False %}  hidden {% elif post.liked %}  {% else %} hidden {% endif %} " ><i class="fa-regular fa-thumbs-down"></i>
+                                    </button> 
+                               
+                                    <button id="like_btn-{{post.id}}" onclick="addlike({{post.id}},{{post.likes.count}})" data-id="{{post.id}}" class="like_btn {% if post.liked %}  hidden {% elif not post.liked %} {% endif %}"><i class="fa-regular fa-thumbs-up"></i></button> 
+
+                               
+                                {% endif %} 
+                                <p><i class="fa-solid fa-heart"></i> <span id="like-{{post.id}}" class="likecount">{% if post.likes.count != 0 %}{{post.likes.count}}{% else %}0{% endif %}</span></p>
+                                    
+                                {% if user.is_authenticated %}
+                                    {% if request.user == post.user %}
+                                         <button id="{{post.id}}" class="edit_btn"><i class="fa-solid fa-pen-to-square"></i> Edit Post</button> 
+                                    {% endif %}
+
+
+                                {% endif %}
+                            
+                            </div>
+                           
+                        </div>
+
+                        <form action="{% url 'save_edited_post' post.id %}"  class="edit-post-form hidden" id="edit-form-{{post.id}}" method="POST"  >
+                            {% csrf_token %}
+                            {{post.editpostform.content}}
+                                                
+                            <input id="edit-save-{{post.id}}" class="btn-submit" name="save-edited-post-{{post.id}}" type="submit" value="Save">
+                        </form>
+                        {% empty %}
+                            
+                                <p style="text-align: center;">No posts to show</p>             
+
+                        
+                        
+                        {% endfor %}
+
+                        
+                    </div>
+
+                    <div class="pagination">
+                        <span class="step-links">
+                            {% if page_obj.has_previous %}
+                               
+                                <a href="?page={{ page_obj.previous_page_number }}" class="pagination-step">Previous</a>
+                            {% endif %}
+
+                          
+                            {% if page_obj.has_next %}
+                                <a href="?page={{ page_obj.next_page_number }}" class="pagination-step">Next</a>
+                              
+                            {% endif %}
+                        </span>
+                    </div>
+                </div>
+             </div>
+        </div>
+    </main>
+   
+{% endblock %}

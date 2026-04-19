@@ -1,0 +1,63 @@
+
+.main-content{
+    position: relative;
+}
+.social-info{
+    background-color: rgb(253, 253, 253);
+    background-color: rgb(27, 27, 27); 
+    padding: 10px;
+    width: 400px;
+    margin: 0 auto;
+    border-bottom: 1px solid rgb(189, 189, 189);
+    color: rgb(235, 235, 235);
+    /* color: white; */
+    font-weight: 300 !important;
+
+
+}
+.social-info h3{
+    text-align: center;
+}
+.social-functionality{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.social-functionality p{
+    margin-bottom: 0;
+  
+}
+.social-functionality > * {
+    margin-right: 20px;
+}
+.follow-btn{
+    background-color: rgb(0, 162, 255);
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    align-self: center;
+    border-radius: 8px;
+}
+
+.unfollow-btn{
+    background-color: rgb(255, 127, 113);
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    align-self: center;
+    border-radius: 8px;
+}
+
+.unlike_btn{
+    background-color: rgb(219, 71, 54);
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    align-self: center;
+    border-radius: 8px;
+    padding: 5px 20px;
+}
+
+.create-post-content{
+    margin-bottom: 20px;
+}

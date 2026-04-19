@@ -1,0 +1,286 @@
+/* GLOBAL
+----------------------- */
+
+body{
+    /* background-color: rgb(252, 252, 252) !important; */
+    background-color: white !important;
+    color: rgb(88, 88, 88);
+    font-family: "Roboto", sans-serif !important;
+}
+p{
+    font-weight: 300;
+}
+
+a:link, a:visited{
+    color: rgb(224, 224, 224);
+    font-weight: bold;
+ }
+h2{
+    font-weight: 300;
+}
+div,form{
+    border-radius: 8px;
+}
+.nav-link,.navbar-brand{
+    color: white !important; 
+}
+.main{
+    min-height: 850px;
+    background-color: rgb(41, 41, 41);
+    color: white;
+}
+.main-wraper{
+    width: 80%;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+.loginregister-wraper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 700px;
+    width: 100%;
+}
+
+.loginregister-wraper form {
+    width: 60%;
+    text-align: center;
+}
+
+.flexing{
+    display: flex;
+    justify-content: center;
+ 
+}
+
+.flexing > *{
+    margin: 20px;
+   
+
+}
+
+.sidebar{
+    height: 900px;
+    background-color: white; 
+    width: 30%;
+}
+
+.main-content{
+    width: 70%;
+    margin: 0 auto;
+}
+
+
+
+
+.main-content > *:not(last-of-type){
+    margin-bottom: 20px;
+}
+
+/* GLOBAL
+------------------------ */
+
+
+.create-post-form,.edit-post-form{
+     background-color: rgb(254, 254, 254);
+     
+    padding: 30px;
+    border: 1px solid rgb(197, 197, 197); 
+    -webkit-box-shadow: 1.5px 1.5px 1.5px 1px #222222; 
+    box-shadow: 1.5px 1.5px 1.5px 1px #222222; 
+     background-color: rgb(27, 27, 27); 
+    position: relative;
+
+}
+.edit-post-form{
+    margin-bottom: 20px;
+}
+textarea.form-control {
+    height: 80px;
+    background-color: rgb(41, 41, 41);
+     color: rgb(224, 224, 224);
+      font-weight: 300;
+
+}
+
+textarea.form-control:focus{
+    background-color: rgb(41, 41, 41);
+    color: rgb(224, 224, 224);
+    font-weight: 300;
+    border-color: #ff9469;
+}
+
+textarea::placeholder{
+    color: rgb(224, 224, 224) !important;
+}
+
+.btn-submit{
+    background-color: rgb(0, 162, 255);
+    color: white;
+    padding: 5px 20px;
+    border: none;
+    margin-top: 10px;
+     border-radius: 10px;
+   
+}
+.main-wraper h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 0;
+    font-weight: 300;
+    color: white;
+    padding: 20px;
+    width: 97%;
+    margin: 0 auto 0 auto;
+    border-radius: 10px;
+    font-weight: 300 !important;
+}
+.post{
+    background-color: rgb(254, 254, 254);
+    padding: 30px;
+    border: 1px solid rgb(197, 197, 197); 
+    -webkit-box-shadow: 1.5px 1.5px 1.5px 1px #1b1b1b; 
+    box-shadow: 1.5px 1.5px 1.5px 1px #1b1b1b; 
+    position: relative;
+    background-color: rgb(27, 27, 27);
+    color: rgb(224, 224, 224);
+    transition: all .4s;
+    
+   
+}
+
+.post:hover{
+     border-color: #ff9469;
+}
+
+.post p a:link,.post p a:visited{
+    color: rgb(224, 224, 224);
+    text-decoration: underline;
+}
+
+.post:not(last-of-type){
+    margin-bottom: 25px;
+}
+
+.post:first-of-type{
+     margin-top: 25px;
+}
+
+.post p{
+    margin: 0;
+}
+
+.post-data {
+    position: absolute;
+    bottom: 35px;
+    right: 40px;
+}
+
+.likes{
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 20px;
+    align-items: center;
+}
+
+.likes > *{
+    margin-right: 10px;
+}
+
+.fa-solid.fa-heart{
+    color: red;
+}
+
+.like_btn{
+    border: none;
+    background-color: rgb(0, 162, 255);
+    color: white;
+    border-radius: 10px;
+    padding: 5px 20px;
+}
+.edit_btn{
+     border: none;
+    background-color: rgb(17, 17, 17);
+    color: white;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 5px 20px;
+    margin-left: 10px;
+
+}
+.hidden{
+    display: none;
+}
+
+.pagination {
+   justify-content: center;
+   width: 60%;
+   margin: 0 auto;
+}
+.pagination-step:link,.pagination-step:visited{
+    margin-right: 5px;
+  
+    padding: 5px 10px;
+    border-radius: 10px;
+    display: inline-block;
+    border: 1px solid rgb(61, 61, 61);
+    font-weight: 300;
+    transition: all .3s;
+    background-color: rgb(238, 238, 238);
+    color: black;
+    
+}
+
+.pagination-step:hover{
+    text-decoration: underline;
+    background-color:  rgb(252, 120, 72);
+    color: rgb(207, 207, 207);
+    font-weight: 400;
+}
+
+.footer{
+    height: 80px;
+    background-color: rgb(81, 108, 145);
+    background-color: rgb(27, 27, 27);
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.footer p{
+    margin: 0;
+}
+
+.footer p a:link,.footer p a:visited{
+    font-weight: bold;
+    color: white;
+}
+
+input.form-control{
+    background-color: rgb(27, 27, 27) !important;
+    color: rgb(224, 224, 224) !important;
+    font-weight: 300 !important;
+
+}
+
+input.form-control:focus{
+    background-color: rgb(27, 27, 27) !important;
+    color: rgb(224, 224, 224) !important;
+    font-weight: 300 !important;
+    /* outline: 1px solid white; */
+    border-color: #ff9469;
+    box-shadow: none;
+}
+
+input.form-control::placeholder{
+    color: rgb(224, 224, 224) !important;
+    font-weight: 300 !important;
+}
+
+.ext-wraper label,#toggle{
+    display: none;
+}
