@@ -13,7 +13,7 @@
                     
         
                 <div class="post">
-                    <p>{{profile_post.content}}</p>
+                    <p class="post-content">{{profile_post.content}}</p>
                     <p class="post-data">Posted by <a href="{% url 'profile' profile_post.user.username %}">{{profile_post.user.username}}</a> - {{profile_post.creation_date}}</p>
                     <div class="likes">
                         {% if user.is_authenticated %}

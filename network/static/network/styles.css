@@ -15,10 +15,15 @@ a:link, a:visited{
     color: rgb(224, 224, 224);
     font-weight: bold;
  }
+/* .nav-link:link,.nav-link:visited,a.navbar-brand:link,.a.navbar-brand:visited {
+    color: rgb(59, 59, 59) !important;
+    font-weight: 400;
+} */
+
 h2{
     font-weight: 300;
 }
-div,form{
+.post,form,.social-info{
     border-radius: 8px;
 }
 .nav-link,.navbar-brand{
@@ -141,14 +146,21 @@ textarea::placeholder{
     background-color: rgb(254, 254, 254);
     padding: 30px;
     border: 1px solid rgb(197, 197, 197); 
-    -webkit-box-shadow: 1.5px 1.5px 1.5px 1px #1b1b1b; 
-    box-shadow: 1.5px 1.5px 1.5px 1px #1b1b1b; 
+    -webkit-box-shadow:2px 2px 2px 2px #343434; 
+    box-shadow: 2px 2px 2px 2px #303030; 
     position: relative;
     background-color: rgb(27, 27, 27);
     color: rgb(224, 224, 224);
     transition: all .4s;
     
    
+}
+
+.post .post-content{
+    background-color: #c9c9c9;
+    color: black;
+    padding: 20px;
+    border-radius: 8px;
 }
 
 .post:hover{
@@ -203,8 +215,9 @@ textarea::placeholder{
 .edit_btn{
      border: none;
     background-color: rgb(17, 17, 17);
-    color: white;
-    border: 1px solid white;
+    background-color: #e6e6e6;
+    color: black;
+    border: 1px solid #000000;
     border-radius: 10px;
     padding: 5px 20px;
     margin-left: 10px;
