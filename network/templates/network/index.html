@@ -1,6 +1,7 @@
 {% extends "network/layout.html" %}
+{% load tz %}
 {% block title %}Social Network - All Posts{% endblock %}
-     
+
 {% block body %}
     <main class="main">
         <div class="main-wraper">
@@ -26,7 +27,7 @@
                         {% for post in page_obj %}
                         <div class="post" id="post-{{post.id}}">
                             <p class="post-content">{{post.content}}</p>
-                            <p class="post-data">Posted by <a href="{% url 'profile' post.user.username %}">{{post.user.username}}</a> - {{post.creation_date}}</p>
+                            <p class="post-data">Posted by <a href="{% url 'profile' post.user.username %}">{{post.user.username}}</a> - {{ post.creation_date|localtime }}</p>
                             <div class="likes">
                                 {% if user.is_authenticated %}
                                
