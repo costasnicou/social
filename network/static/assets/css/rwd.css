@@ -87,10 +87,16 @@
     }
 
     textarea.form-control {
-        height: 400px;
-        background-color: rgb(41, 41, 41);
-        color: rgb(224, 224, 224);
+        height: 150px;
         font-weight: 300;
+        background-color: #c9c9c9;
+        color: black;
+    }
+    textarea.form-control:focus{
+        background-color: #e0e0e0;
+        color: black;
+        font-weight: 300;
+        border-color: #ff9469;
     }
 
     .footer p {

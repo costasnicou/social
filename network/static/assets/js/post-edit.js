@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
             post.classList.add('hidden');
         
             editForm.classList.remove('hidden');
+            editForm.querySelector('textarea').focus();
 
           
           
@@ -42,10 +43,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
             const postId = this.id.split('-').pop(); 
             // const parent = form;
+           
             const content = this.querySelector("textarea").value;
             const post = document.querySelector(`#post-${postId}`);
             form.classList.add("hidden");
             post.classList.remove("hidden");
+            
             post.firstElementChild.innerText = content;
             const formcontent = new FormData(this);
             formcontent.append(`save-edited-post-${postId}`,"True");

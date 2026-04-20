@@ -1,5 +1,4 @@
 {% extends 'network/layout.html' %}
-{% load tz %}
 {% block title %} Profile - {{profile_user}}{% endblock %}
 {% block body %}
 
@@ -55,7 +54,7 @@
                 {% for post in page_obj %}
                     <div class="post" id="post-{{post.id}}">
                         <p class="post-content">{{post.content}}</p>
-                        <p class="post-data">Posted by <a href="{% url 'profile' profile_user %}">{{profile_user}}</a> - {{ post.creation_date|localtime }}</p>
+                        <p class="post-data">Posted by <a href="{% url 'profile' profile_user %}">{{profile_user}}</a> - {{ post.creation_date }}</p>
                         <div class="likes">
                             {% if user.is_authenticated %}
                             
